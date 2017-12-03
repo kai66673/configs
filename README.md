@@ -19,3 +19,6 @@ ln -s **local-repo-path**/**config-name**/vim/.vim
 
 ln -s **local-repo-path**/**config-name**/vim/.vimrc
 
+cd .vim/plugged/youcompleteme
+
+./install.sh --clang-completer --go-completer
