@@ -12,6 +12,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'morhetz/gruvbox'
 Plug 'valloric/youcompleteme'
 Plug 'jiangmiao/auto-pairs'
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 
 call plug#end()
 
