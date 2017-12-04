@@ -13,12 +13,26 @@ Plug 'morhetz/gruvbox'
 Plug 'valloric/youcompleteme'
 Plug 'jiangmiao/auto-pairs'
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+Plug 'majutsushi/tagbar'
 
 call plug#end()
 
-" colorscheme gruvbox
-" set background=none
+colorscheme gruvbox
+set background=dark
+
+" YCM options
+let g:ycm_confirm_extra_conf=0
+let g:ycm_goto_buffer_command = 'same-buffer'
+let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
+
+function YcmSGD()
+    split | YcmCompleter GoToDefinition
+endfunction()
 
 " Mappings
 map <C-n> :NERDTreeToggle<CR>
+nnoremap <F5> :buffers<CR>:buffer<Space>
+nnoremap <F2> :YcmCompleter GoTo<CR>
+nnoremap <F3> :call YcmSGD()<CR>
+nmap <F8> :TagbarToggle<CR>
 
