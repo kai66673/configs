@@ -17,8 +17,8 @@ Plug 'majutsushi/tagbar'
 
 call plug#end()
 
-colorscheme gruvbox
-set background=dark
+"colorscheme gruvbox
+"set background=dark
 
 " YCM options
 let g:ycm_confirm_extra_conf=0
@@ -35,4 +35,17 @@ nnoremap <F5> :buffers<CR>:buffer<Space>
 nnoremap <F2> :YcmCompleter GoTo<CR>
 nnoremap <F3> :call YcmSGD()<CR>
 nmap <F8> :TagbarToggle<CR>
+
+function! ToggleSyntax()
+    if exists("g:syntax_on")
+        syntax off
+    else
+        syntax enable
+    endif
+endfunction
+
+iabbrev <silent> CWD <C-R>=getcwd()<CR>
+                                      
+nmap <silent>  ;s  :call ToggleSyntax()<CR>
+nmap <silent>  ;n  :set invnumber<CR>
 
