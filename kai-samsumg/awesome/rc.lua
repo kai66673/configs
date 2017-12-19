@@ -45,7 +45,7 @@ beautiful.init("/home/kai/.config/awesome/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 -- terminal = "x-terminal-emulator"
-terminal = "urxvt"
+terminal = "konsole"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -489,3 +489,5 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 os.execute("setxkbmap -option grp:switch,grp_led:scroll,grp:rshift_toggle us,ru")
+os.execute("pkill -u $USER xcompmgr")
+os.execute("xcompmgr -C &")

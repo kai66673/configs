@@ -17,8 +17,8 @@ Plug 'majutsushi/tagbar'
 
 call plug#end()
 
-"colorscheme gruvbox
-"set background=dark
+colorscheme gruvbox
+set background=dark
 
 " YCM options
 let g:ycm_confirm_extra_conf=0
