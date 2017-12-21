@@ -27,7 +27,7 @@ let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 
 function YcmSGD()
     split | YcmCompleter GoToDefinition
-endfunction()
+endfunction
 
 " Mappings
 map <C-n> :NERDTreeToggle<CR>
