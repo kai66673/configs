@@ -45,7 +45,7 @@ beautiful.init("/home/kai/.config/awesome/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 -- terminal = "x-terminal-emulator"
-terminal = "gnome-terminal"
+terminal = "konsole"
 browser="firefox"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
@@ -142,7 +142,7 @@ kate_launcher:buttons( awful.util.table.join(awful.button({ }, 1, function () aw
 
 -- run qtcreator launch widget
 qtcreator_launcher = awful.widget.button({ image = "/home/kai/.config/awesome/icons/qtcreator.png"})
-qtcreator_launcher:buttons( awful.util.table.join(awful.button({ }, 1, function () awful.util.spawn("/home/kai/Qt5.9.1/Tools/QtCreator/bin/qtcreator") end)) )
+qtcreator_launcher:buttons( awful.util.table.join(awful.button({ }, 1, function () awful.util.spawn("/home/kai/qtcreator-4.5.0/bin/qtcreator") end)) )
 
 -- Create a textclock widget
 mytextclock = awful.widget.textclock()
@@ -401,7 +401,7 @@ awful.rules.rules = {
                      raise = true,
                      keys = clientkeys,
                      buttons = clientbuttons } },
-    { rule = { class = "Gnome-terminal" },
+    { rule = { class = "konsole" },
       properties = { tag = tags[1][1] } },
     { rule = { class = "jetbrains-pycharm-ce" },
       properties = { tag = tags[1][2] } },
@@ -500,11 +500,13 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
-os.execute("pkill -u $USER gnome-terminal")
-os.execute("gnome-terminal")
-os.execute("gnome-terminal")
-os.execute("gnome-terminal -e mc")
-os.execute("/home/kai/kl.sh")
+os.execute("setxkbmap -option grp:switch,grp_led:scroll,grp:rshift_toggle us,ru")
+os.execute("pkill -u $USER xcompmgr")
+os.execute("xcompmgr -C &")
+
+os.execute("konsole &")
+os.execute("konsole &")
+os.execute("konsole -e mc &")
 
 os.execute("pgrep -u $USER -x firefox || firefox &")
 os.execute("pgrep -u $USER pycharm-comm || pycharm-community &")

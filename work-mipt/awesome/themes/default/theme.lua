@@ -17,9 +17,9 @@ theme.fg_focus      = "#ffffff"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
 
-theme.border_width  = 1
-theme.border_normal = "#000000"
-theme.border_focus  = "#535d6c"
+theme.border_width  = 2
+theme.border_normal = "#5f5f6f"
+theme.border_focus  = "#ff5d6c"
 theme.border_marked = "#91231c"
 
 -- There are other variable sets
@@ -31,7 +31,7 @@ theme.border_marked = "#91231c"
 -- tooltip_[font|opacity|fg_color|bg_color|border_width|border_color]
 -- mouse_finder_[color|timeout|animate_timeout|radius|factor]
 -- Example:
---theme.taglist_bg_focus = "#ff0000"
+theme.taglist_bg_focus = "#917f5d"
 
 -- Display the taglist squares
 theme.taglist_squares_sel   = "/home/kai/.config/awesome/themes/default/taglist/squarefw.png"

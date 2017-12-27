@@ -1,0 +1,9 @@
+[user]
+	name = Alexander Kudryavtsev
+	email = kai66673@mail.ru
+[core]
+	editor = vim
+[alias]
+	st = status -s
+	ci = commit
+	co = checkout
