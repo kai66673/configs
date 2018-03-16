@@ -65,8 +65,9 @@ let g:pymode_syntax_all = 1
 let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
-" autofold disabling
+" autofold disabling, max length column set to 120 symbols
 let g:pymode_folding = 0
+let g:pymode_options_max_line_length =120
 
 function YcmSGD()
     split | YcmCompleter GoToDefinition
@@ -92,4 +93,15 @@ iabbrev <silent> CWD <C-R>=getcwd()<CR>
 nmap <silent>  ;s  :call ToggleSyntax()<CR>
 nmap <silent>  ;n  :set invnumber<CR>
 nmap <C-k> :call CtrlKNavigateSymbols()<CR>
+
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
 

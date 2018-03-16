@@ -136,6 +136,10 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 
 -- {{{ Wibox
     
+-- Separator
+separator = wibox.widget.textbox()
+separator:set_text("|")
+
 -- run kate-editor launch widget
 kate_launcher = awful.widget.button({ image = "/home/kai/.config/awesome/icons/kate.png"})
 kate_launcher:buttons( awful.util.table.join(awful.button({ }, 1, function () awful.util.spawn("kate") end)) )
@@ -143,6 +147,10 @@ kate_launcher:buttons( awful.util.table.join(awful.button({ }, 1, function () aw
 -- run qtcreator launch widget
 qtcreator_launcher = awful.widget.button({ image = "/home/kai/.config/awesome/icons/qtcreator.png"})
 qtcreator_launcher:buttons( awful.util.table.join(awful.button({ }, 1, function () awful.util.spawn("/home/kai/qtcreator-4.5.0/bin/qtcreator") end)) )
+
+-- run qgis-desktop launch widget
+qgis_launcher = awful.widget.button({ image = "/home/kai/.config/awesome/icons/qgis-desktop.png"})
+qgis_launcher:buttons( awful.util.table.join(awful.button({ }, 1, function () awful.util.spawn("/home/kai/conda-bin/qgis.sh") end)) )
 
 -- Create a textclock widget
 mytextclock = awful.widget.textclock()
@@ -224,11 +232,16 @@ for s = 1, screen.count() do
     local left_layout = wibox.layout.fixed.horizontal()
     left_layout:add(mylauncher)
     left_layout:add(mytaglist[s])
-    left_layout:add(mypromptbox[s])
     if s == 2 then
+        left_layout:add(separator)
         left_layout:add(kate_launcher)
+        left_layout:add(separator)
         left_layout:add(qtcreator_launcher)
+        left_layout:add(separator)
+        left_layout:add(qgis_launcher)
+        left_layout:add(separator)
     end
+    left_layout:add(mypromptbox[s])
 
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
@@ -333,7 +346,16 @@ clientkeys = awful.util.table.join(
         function (c)
             c.maximized_horizontal = not c.maximized_horizontal
             c.maximized_vertical   = not c.maximized_vertical
+        end),
+    awful.key({ modkey,           }, "Next",
+        function (c)
+            awful.util.spawn("transset --actual --inc .05")
+        end),
+    awful.key({ modkey,           }, "Prior",
+        function (c) 
+            awful.util.spawn("transset --actual --dec .05")
         end)
+
 )
 
 -- Bind all key numbers to tags.
@@ -415,6 +437,8 @@ awful.rules.rules = {
       properties = { tag = tags[2][4] } },
     { rule = { class = "main.py" },
       properties = { tag = tags[2][5] } },
+    { rule = { name = "Bricks 2D-scene" },
+      properties = { tag = tags[2][5], switchtotag = true } },
     { rule = { class = "MPlayer" },
       properties = { floating = true } },
     { rule = { class = "pinentry" },
@@ -499,6 +523,8 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+os.execute("pgrep -u $USER -x synergys| synergys")
 
 os.execute("setxkbmap -option grp:switch,grp_led:scroll,grp:rshift_toggle us,ru")
 os.execute("pkill -u $USER xcompmgr")
