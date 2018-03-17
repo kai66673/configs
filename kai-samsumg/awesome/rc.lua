@@ -136,6 +136,8 @@ heroes3_button = awful.widget.button({ image = beautiful.heroes3_icon })
 heroes3_button:buttons(awful.util.table.join(
     awful.button({ }, 1, function() awful.util.spawn("/home/kai/hmm3/heroes3") end)
 ))
+qtcreator_launcher = awful.widget.button({ image = "/home/kai/.config/awesome/icons/qtcreator.png"})
+qtcreator_launcher:buttons( awful.util.table.join(awful.button({ }, 1, function () awful.util.spawn("/home/kai/qtcreator-4.5.0/bin/qtcreator") end)) )
 
 -- Create a textclock widget
 mytextclock = awful.widget.textclock()
@@ -217,6 +219,8 @@ for s = 1, screen.count() do
     local left_layout = wibox.layout.fixed.horizontal()
     left_layout:add(mylauncher)
     left_layout:add(mytaglist[s])
+    left_layout:add(separator)
+    left_layout:add(qtcreator_launcher)
     left_layout:add(separator)
     left_layout:add(kate_button)
     left_layout:add(separator)
