@@ -336,7 +336,15 @@ clientkeys = awful.util.table.join(
         function (c)
             c.maximized_horizontal = not c.maximized_horizontal
             c.maximized_vertical   = not c.maximized_vertical
-        end)
+        end),
+    awful.key({ modkey,            }, "Next",    
+        function (c)    
+            awful.util.spawn("transset --actual --inc .05")    
+        end),    
+    awful.key({ modkey,            }, "Prior",    
+        function (c)    
+            awful.util.spawn("transset --actual --dec .05")    
+        end)    
 )
 
 -- Bind all key numbers to tags.
