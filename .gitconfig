@@ -1,0 +1,36 @@
+[user]
+	email = kai66673@mail.ru
+	name = Alexander Kudryavtsev
+
+# ------------------ M E R G E -------------------------
+[merge]
+    tool = meld
+
+[mergetool "meld"]
+    cmd = meld --auto-merge \"$LOCAL\" \"$BASE\" \"$REMOTE\" --output \"$MERGED\" --label \"MERGE (REMOTE BASE MY)\"
+    trustExitCode = false
+
+[mergetool]
+    # don't ask if we want to skip merge
+    prompt = false
+
+    # don't create backup *.orig files
+    keepBackup = false
+
+# ------------------ D I F F -------------------------
+[diff]
+    tool = meld
+    external = /home/kai/bin/meld_diff.py
+
+[difftool "meld"]
+    # cmd = meld \"$LOCAL\" \"$REMOTE\" --label \"DIFF (ORIGINAL MY)\"
+    cmd = meld \"$LOCAL\" \"$REMOTE\" --label \"DIFF (ORIGINAL MY)\"
+
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	df = diff
+	dft = difftool
