@@ -146,7 +146,7 @@ kate_launcher:buttons( awful.util.table.join(awful.button({ }, 1, function () aw
 
 -- run qtcreator launch widget
 qtcreator_launcher = awful.widget.button({ image = "/home/kai/.config/awesome/icons/qtcreator.png"})
-qtcreator_launcher:buttons( awful.util.table.join(awful.button({ }, 1, function () awful.util.spawn("/home/kai/qtcreator-4.5.0/bin/qtcreator") end)) )
+qtcreator_launcher:buttons( awful.util.table.join(awful.button({ }, 1, function () awful.util.spawn("/home/kai/qtcreator-4.6.0/bin/qtcreator") end)) )
 
 -- run qgis-desktop launch widget
 qgis_launcher = awful.widget.button({ image = "/home/kai/.config/awesome/icons/qgis-desktop.png"})
