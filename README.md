@@ -24,3 +24,8 @@ ln -s **local-repo-path**/**config-name**/vim/.vimrc
 cd .vim/plugged/youcompleteme
 
 ./install.sh --clang-completer --go-completer
+
+### Improvements
+Win+Tab keybinding (for awesome 4.0+):
+https://github.com/blueyed/awesome-cyclefocus
+
