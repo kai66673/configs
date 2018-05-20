@@ -69,15 +69,20 @@ let g:pymode_syntax_space_errors = g:pymode_syntax_all
 let g:pymode_folding = 0
 let g:pymode_options_max_line_length =120
 
-function YcmSGD()
-    split | YcmCompleter GoToDefinition
+function SplitGoto()
+    split | call jedi#goto()
+endfunction
+
+function VsplitGoto()
+    vsplit | call jedi#goto()
 endfunction
 
 " Mappings
 map <C-n> :NERDTreeToggle<CR>
 nnoremap <F5> :buffers<CR>:buffer<Space>
-nnoremap <F2> :YcmCompleter GoTo<CR>
-nnoremap <F3> :call YcmSGD()<CR>
+nnoremap <F2> :call jedi#goto()<CR>
+nnoremap <F3> :call SplitGoto()<CR>
+nnoremap <F4> :call VsplitGoto()<CR>
 nmap <F8> :TagbarToggle<CR>
 
 function! ToggleSyntax()
