@@ -1,0 +1,109 @@
+Check status at bricks2...
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+Check status at bricks_lib...
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+Check status at flower_bricks...
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+Check status at flower_qt...
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+Check status at bricks_cli...
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+Check status at flower...
+On branch union
+Your branch is up to date with 'origin/union'.
+
+nothing to commit, working tree clean
+Check status at flower_numpy...
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+Check status at flower_pyphased...
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+Check status at integration_research...
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+Check status at pyphased...
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+Check status at pyphased_utils...
+On branch artem
+Your branch is up to date with 'origin/artem'.
+
+nothing to commit, working tree clean
+Check status at qgis_research...
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+Check status at radar_cad...
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+Check status at radar_sim...
+On branch xradar
+Your branch is up to date with 'origin/xradar'.
+
+nothing to commit, working tree clean
+Check status at radar_sim_models...
+On branch telemetry
+Your branch is up to date with 'origin/telemetry'.
+
+nothing to commit, working tree clean
+Check status at misc_qt_utils...
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+Check status at diamond_indication...
+On branch artem
+Your branch is up to date with 'origin/artem'.
+
+nothing to commit, working tree clean
+Check status at diamond_geoproc...
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+Check status at sapr...
+On branch api
+Your branch is up to date with 'origin/api'.
+
+nothing to commit, working tree clean
+Check status at sapr_db...
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+Check status at rain_path...
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+kai@kai-giga-work:~/git/falt_wrap/trajectorylib$ git st
+HEAD detached at fb193e9
+nothing to commit, working tree clean
