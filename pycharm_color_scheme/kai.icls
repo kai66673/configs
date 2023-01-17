@@ -1,9 +1,9 @@
 <scheme name="Darcula copy" version="142" parent_scheme="Darcula">
   <metaInfo>
-    <property name="created">2023-01-17T16:11:52</property>
+    <property name="created">2023-01-17T17:52:26</property>
     <property name="ide">PyCharmCore</property>
     <property name="ideVersion">2022.2.3.0.0</property>
-    <property name="modified">2023-01-17T16:12:04</property>
+    <property name="modified">2023-01-17T17:52:39</property>
     <property name="originalScheme">Darcula copy</property>
   </metaInfo>
   <attributes>
@@ -16,6 +16,11 @@
       <value>
         <option name="FOREGROUND" value="5f3fa2" />
         <option name="FONT_TYPE" value="2" />
+      </value>
+    </option>
+    <option name="PY.DECORATOR">
+      <value>
+        <option name="FOREGROUND" value="f36107" />
       </value>
     </option>
     <option name="PY.FUNCTION_CALL">
